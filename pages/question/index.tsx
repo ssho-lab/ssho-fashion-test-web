@@ -114,15 +114,13 @@ const index = () => {
     }
 
     const handleResult = () => {
-        console.log(questions.length)
         check_arr();
         check_all();
         check_E();
         check_S();
         check_F();
         check_P();
-
-        router.push('/result/1');
+        router.push('/result/ESFJ');
     }
 
     const check_arr = () => {
@@ -136,7 +134,6 @@ const index = () => {
             if (questionAnswers[i]) {
                 setScore(score => score + 1);
             }
-
         }
     }
 
