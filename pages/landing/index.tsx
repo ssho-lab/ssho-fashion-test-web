@@ -17,7 +17,6 @@ const index = () => (
                 <Link href ='/question'><img className="button_image" src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/start.png' alt="start button"/></Link>
             </div>
         </div>
-
     </div>
 )
 

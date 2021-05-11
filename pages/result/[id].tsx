@@ -49,9 +49,11 @@ const index = () => {
 
             </div>
             <div className="button_container">
-                <Link href='/landing'><img className="button"
-                                           src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/replay.png'}
-                                           alt="replay button"/></Link>
+                <Link href='/landing'>
+                    <img className="button"
+                         src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/replay.png'}
+                         alt="replay button"/>
+                </Link>
                 <img className="button" src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/share.png'}
                      alt="share button"/>
             </div>
