@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import {useRouter} from 'next/router';
 import {questions} from '../../components/question/text/QuestionText'
+import {Logo} from "../../components/common/Logo";
+import {Background} from "../../components/common/Background";
+import {url} from "../../config/Url";
 
 const index = () => {
     const router = useRouter();
 
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [questionAnswers, setQuestionAnswers] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+    const [questionAnswers, setQuestionAnswers] = useState<boolean[]>([]);
 
     const handleButtonClick = (isCorrect) => {
 
@@ -18,10 +21,8 @@ const index = () => {
     }
 
     const handleResult = () => {
-
-        const mbti  = checkQuestions();
-
-        router.push('/result/' + mbti);
+        const mbti = checkQuestions();
+        router.push(url.RESULT + '/' + mbti);
     }
 
     const checkQuestions = () => {
@@ -32,13 +33,13 @@ const index = () => {
         let score_P = 0
 
         questionAnswers.forEach((answer, i) => {
-            if(i >= 0 && i < 3 && answer) {
+            if (i >= 0 && i < 3 && answer) {
                 score_E++;
-            } else if (i >= 3 &&  i < 6 && answer) {
+            } else if (i >= 3 && i < 6 && answer) {
                 score_S++;
-            } else if (i >= 6 &&  i < 9 && answer) {
+            } else if (i >= 6 && i < 9 && answer) {
                 score_F++;
-            } else if (i >= 9 &&  i < 12 && answer) {
+            } else if (i >= 9 && i < 12 && answer) {
                 score_P++;
             }
         });
@@ -49,25 +50,25 @@ const index = () => {
     const getMbti = (score_E, score_S, score_F, score_P) => {
         let mbti: string = ''
 
-        if(score_E < 2) {
+        if (score_E < 2) {
             mbti = mbti.concat('E');
         } else {
             mbti = mbti.concat('I');
         }
 
-        if(score_S < 2) {
+        if (score_S < 2) {
             mbti = mbti.concat('S');
         } else {
             mbti = mbti.concat('N');
         }
 
-        if(score_F < 2) {
+        if (score_F < 2) {
             mbti = mbti.concat('F');
         } else {
             mbti = mbti.concat('T');
         }
 
-        if(score_P < 2) {
+        if (score_P < 2) {
             mbti = mbti.concat('P');
         } else {
             mbti = mbti.concat('J');
@@ -78,16 +79,8 @@ const index = () => {
 
     return (
         <div className="Landing_back">
-            <div className='ssho-logo'>
-                <img className="sshologo"
-                     src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/sshologo.png'
-                     alt="logo of s-sho"/>
-            </div>
-            <div>
-                <img className="background_image"
-                     src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/backgroundimg.png'
-                     alt="background"/>
-            </div>
+            <Logo/>
+            <Background/>
             <div className="question-wrap">
                 <div className='question-section'>
                     <div className='question-count'>
@@ -104,7 +97,8 @@ const index = () => {
                     <div className='answer-section'>
                         {questions[currentQuestion].answerOptions.map((answerOption, key) => (
                             <button
-                                onClick={() => handleButtonClick(answerOption.isCorrect)} key={key}>{answerOption.answerText}</button>
+                                onClick={() => handleButtonClick(answerOption.isCorrect)}
+                                key={key}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </div>

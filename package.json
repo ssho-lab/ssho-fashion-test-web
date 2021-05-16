@@ -4,17 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "next start -p 8081",
+    "build": "npm run clean && next build",
+    "clean": "rmdir /s .next",
+    "deploy": "npm install && npm run build && eb deploy ssho-fashion-test-web-real"
   },
   "dependencies": {
-    "next": "10.2.0",
-    "react": "17.0.2",
+    "next": "10.0.8",
+    "react": "17.0.1",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^15.0.2",
-    "@types/react": "^17.0.5",
+    "@types/node": "^14.14.34",
+    "@types/react": "^17.0.3",
     "typescript": "^4.2.4"
   }
 }
