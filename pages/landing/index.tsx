@@ -9,7 +9,7 @@ const index = () => (
         <Logo/>
         <Background/>
         <div className="main_content_landing">
-            <img className="title" src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/invalid-name.png' alt="패션 성향 테스트"/>
+            <img className="title" src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/invalid.png' alt="패션 성향 테스트"/>
             <p className="normal_font">스와이프로 나만의 패션 성향 알아보기</p>
             <img className="card" src='https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/4.png' alt="card with a black background"/>
             <div>

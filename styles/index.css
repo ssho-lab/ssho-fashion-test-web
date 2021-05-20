@@ -55,7 +55,7 @@ code {
 .background_image {
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
+    height: 100%;
     max-width: 500px;
 }
 .card {
