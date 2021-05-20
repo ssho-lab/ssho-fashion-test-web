@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "start": "next start -p 8081",
+    "dev": "next dev -p 8080",
+    "start": "next start -p 8080",
     "build": "npm run clean && next build",
     "clean": "rmdir /s .next",
     "deploy": "npm install && npm run build && eb deploy ssho-fashion-test-web-real"

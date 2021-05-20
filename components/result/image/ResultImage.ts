@@ -1,7 +1,7 @@
 export const styleImg = {
     ISTJ: 'formal',
     ESTJ: 'semiformal',
-    ISTP: 'chic',
+    ISTP: 'semiformal',
     ESTP: 'sporty',
     ISFJ: 'semiformal',
     ESFJ: 'neat',
@@ -9,7 +9,7 @@ export const styleImg = {
     ESFP: 'party',
     INTJ: 'unisex',
     ENTJ: 'semiformal',
-    INTP: 'homeware',
+    INTP: 'neat',
     ENTP: 'semiformal',
     INFJ: 'neat',
     ENFJ: 'street',

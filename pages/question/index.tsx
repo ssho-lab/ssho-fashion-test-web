@@ -51,27 +51,27 @@ const index = () => {
         let mbti: string = ''
 
         if (score_E < 2) {
-            mbti = mbti.concat('E');
-        } else {
             mbti = mbti.concat('I');
+        } else {
+            mbti = mbti.concat('E');
         }
 
         if (score_S < 2) {
-            mbti = mbti.concat('S');
-        } else {
             mbti = mbti.concat('N');
+        } else {
+            mbti = mbti.concat('S');
         }
 
         if (score_F < 2) {
-            mbti = mbti.concat('F');
-        } else {
             mbti = mbti.concat('T');
+        } else {
+            mbti = mbti.concat('F');
         }
 
         if (score_P < 2) {
-            mbti = mbti.concat('P');
-        } else {
             mbti = mbti.concat('J');
+        } else {
+            mbti = mbti.concat('P');
         }
 
         return mbti;
