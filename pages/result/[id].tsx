@@ -5,6 +5,7 @@ import {title, descriptionA, descriptionB, style, recoStyle} from '../../compone
 import {styleImg, recoStyleImg} from '../../components/result/image/ResultImage';
 import {Logo} from "../../components/common/Logo";
 import {url} from "../../config/Url";
+import {Background} from "../../components/common/Background";
 
 const index = () => {
 
@@ -30,7 +31,7 @@ const index = () => {
                 </div>
                 <div className="result_container">
                     <div className="result_description">
-                        <p><span className="result">{title[mbti]}</span> 카드를 고르셨네요.</p>
+                        <p className="description_specific"><span className="result">[{title[mbti]}]</span> <span>카드를 고르셨네요.</span></p>
                         <p className="description_specific">{descriptionA[mbti]}</p>
                         <img className="istj_graph"
                              src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/graph/' + mbti.toLowerCase() + '.png'} alt="istj"/>
@@ -46,7 +47,7 @@ const index = () => {
                         <img className="istj_style"
                              src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/style/' + recoStyleImg[mbti] + '.jpg'}
                              alt="istj"/>
-                        <p className="rec_description">{recoStyle[mbti]}</p>
+                        <h5>{recoStyle[mbti]}</h5>
                     </div>
 
                 </div>
@@ -60,8 +61,7 @@ const index = () => {
                          src={'https://ssho-static.s3.ap-northeast-2.amazonaws.com/fashion-test/share-new.png'}
                          alt="share button"/>
                 </div>
-            </div>
-        )
+            </div>)
     } else {
         return(<div></div>)
     }
